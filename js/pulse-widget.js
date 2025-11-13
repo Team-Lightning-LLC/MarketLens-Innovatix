@@ -296,9 +296,6 @@ class PortfolioPulseWidget {
       articles.push({ title, contents, citations });
     }
 
-    // Filter out untitled articles
-    articles = articles.filter(article => article.title !== 'Untitled Article');
-
     // Extract document title
     const docTitle = text.match(/^#?\s*Scout Pulse Portfolio Digest.*$/m)?.[0]
       ?.replace(/^#\s*/, '').trim() 
