@@ -45,13 +45,15 @@
   <section class="shell">
     <!-- Left: Documents / Portfolio Pulse -->
     <aside class="left">
-      <div class="panel-head">
-        <!-- View Toggle -->
-        <div class="view-toggle">
-          <button class="view-toggle-btn active" id="viewLibrary">Library</button>
-          <button class="view-toggle-btn" id="viewPulse">Pulse</button>
-        </div>
-      </div>
+<div class="panel-head">
+  <span class="panel-header">Library:</span>
+  <!-- View Toggle -->
+  <div class="view-toggle">
+    <button class="view-toggle-btn active" id="viewLibrary">Research</button>
+    <button class="view-toggle-btn" id="viewPulse">Pulse</button>
+    <button class="view-toggle-btn" id="viewChat" disabled>Chat</button>
+  </div>
+</div>
       <div class="left-body">
         <!-- Library View (Default) -->
         <div id="libraryContainer">
@@ -115,6 +117,7 @@
     <!-- Right: Generation -->
     <main class="right">
       <div class="panel-head">
+          <span class="panel-header">Create:</span>
         <!-- View Toggle -->
         <div class="view-toggle">
           <button class="view-toggle-btn active" id="viewResearch">Research</button>
