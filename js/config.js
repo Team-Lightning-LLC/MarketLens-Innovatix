@@ -34,7 +34,7 @@ const CONFIG = {
     "Comparative": [
       "Multi-asset Time Series Analysis",
       "Multi-asset Head to Head evaluation",
-      "Technology Adoption Curves",
+      "Industry Trends",
       "Exposures and Business Models"
     ],
     
@@ -45,7 +45,7 @@ const CONFIG = {
     ],
     
     "Company Insights": [
-      "Talent Landscape",
+      "Management Team",
       "Alliance & Partnerships: Past, Current, Future",
       "Industry Trend Analysis"
     ],
