@@ -435,22 +435,22 @@ class DeepResearchApp {
   }
 
   // Filter and render documents
-  filterAndRenderDocuments() {
-    this.filteredDocuments = this.documents.filter(doc => {
-      const matchesSearch = !this.searchQuery || 
-        [doc.title, doc.area, doc.topic].some(field => 
-          field && field.toLowerCase().includes(this.searchQuery)
-        );
-      
-      // Use collections manager to check if document should be shown
-      const matchesCollection = this.collectionsManager ? 
-        this.collectionsManager.shouldShowDocument(doc.id) : true;
-      
-      return matchesSearch && matchesCollection;
-    });
+filterAndRenderDocuments() {
+  this.filteredDocuments = this.documents.filter(doc => {
+    const matchesSearch = !this.searchQuery || 
+      [doc.title, doc.area, doc.topic].some(field => 
+        field && field.toLowerCase().includes(this.searchQuery)
+      );
     
-    this.renderDocuments();
-  }
+    // Use collections manager to check if document should be shown
+    const matchesCollection = this.collectionsManager ? 
+      this.collectionsManager.shouldShowDocument(doc.id) : true;
+    
+    return matchesSearch && matchesCollection;
+  });
+  
+  this.renderDocuments();
+}
 
   // Render document list
   renderDocuments() {
