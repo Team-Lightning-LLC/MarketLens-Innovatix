@@ -77,7 +77,7 @@ const CONFIG = {
     // Comparative
     "Multi-asset Time Series Analysis": "Enter 2-3 assets with timeframe (e.g., NVDA, AMD, INTC from 2020-2025)",
     "Multi-asset Head to Head evaluation": "Enter 2+ companies for direct comparison (e.g., Tesla vs Rivian vs Lucid: product, financials, market position)",
-    "Technology Adoption Curves": "Enter technology and sectors (e.g., AI adoption: healthcare vs finance vs manufacturing)",
+    "Industry Trends": "Enter a sector to compare industry trends. (e.g., AI adoption: healthcare vs finance vs manufacturing)",
     "Exposures and Business Models": "Enter companies to analyze revenue streams, market dependencies, and business model resilience (e.g., Apple, Amazon)",
     
     // Scenario Modeling
@@ -86,7 +86,7 @@ const CONFIG = {
     "Monetary Policy & Interest Rate": "Enter companies/sectors to analyze interest rate sensitivity (e.g., REITs, utilities, tech growth stocks)",
     
     // Company Insights
-    "Talent Landscape": "Enter industry or company for workforce analysis (e.g., semiconductor engineers, AI researchers at Google)",
+    "Management Teams": "Enter industry or company for workforce analysis (e.g., semiconductor engineers, AI researchers at Google)",
     "Alliance & Partnerships: Past, Current, Future": "Enter company to map partnerships and predict future alliances (e.g., Microsoft, Starbucks)",
     "Industry Trend Analysis": "Enter industry and timeframe (e.g., renewable energy 2020-2030, semiconductor cycles)",
     
