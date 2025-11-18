@@ -242,8 +242,45 @@ async uploadWatchlistFile(file, name) {
       throw new Error(`Failed to upload file: ${uploadResponse.statusText}`);
     }
 
-    console.log('[Pulse] Watchlist uploaded successfully, ID:', uploadData.id);
+    console.log('[Pulse] File uploaded to cloud storage');
+
+    // Step 3: Create object in Vertesia that references the uploaded file
+    const createResponse = await fetch(`${PULSE_CONFIG.VERTESIA_BASE_URL}/objects`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${PULSE_CONFIG.VERTESIA_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        content: {
+          source: uploadData.id,  // This is the gs:// path
+          type: file.type || 'application/octet-stream',
+          name: file.name
+        },
+        properties: {
+          type: 'watchlist',
+          uploaded_at: new Date().toISOString(),
+          original_filename: file.name
+        }
+      })
+    });
+
+    if (!createResponse.ok) {
+      const errorText = await createResponse.text();
+      console.error('[Pulse] Create object failed:', errorText);
+      throw new Error(`Failed to create object: ${createResponse.statusText}`);
+    }
+
+    const createdObject = await createResponse.json();
+    console.log('[Pulse] Watchlist object created:', createdObject);
     
+    return createdObject;
+  } catch (error) {
+    console.error('[Pulse] Error uploading watchlist:', error);
+    throw error;
+  }
+}
     // Return object info for UI display
     return {
       id: uploadData.id,
