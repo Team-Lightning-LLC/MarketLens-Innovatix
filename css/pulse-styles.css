@@ -492,3 +492,80 @@
   color: #6b7280;
   margin-left: 8px;
 }
+/* History Navigation */
+.pulse-date-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pulse-nav-btn {
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.15s ease;
+}
+
+.pulse-nav-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #172A3A;
+}
+
+.pulse-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Loading Overlay */
+.pulse-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+.pulse-loading-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.pulse-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #172A3A;
+  border-radius: 50%;
+  animation: pulse-spin 1s linear infinite;
+  margin: 0 auto 24px;
+}
+
+@keyframes pulse-spin {
+  to { transform: rotate(360deg); }
+}
+
+.pulse-loading-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #172A3A;
+  margin: 0 0 8px 0;
+}
+
+.pulse-loading-subtext {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
